@@ -77,5 +77,8 @@ viewValidation model =
     if model.password == model.passwordAgain then
         div [ style "color" "green" ] [ text "OK" ]
 
+    else if String.length model.password < 8 then
+        div [ style "color" "red" ] [ text "Error" ]
+
     else
         div [ style "color" "red" ] [ text "Password do not match !" ]
